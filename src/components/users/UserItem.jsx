@@ -10,8 +10,9 @@ function UserItem({ user }) {
                  </div>
             </div>
             <div>
-                <h2 class='card-title'>{ user.login }</h2>
-                <Link to={`/users/${ user.login}`} className='text-base-content text-opacity-40'>
+                <h2 className='card-title'>{ user.login }</h2>
+                
+                <Link to={`/user/${ user.login}`} className='text-base-content text-opacity-40'>
                     Visit Profile
                 </Link>
             </div>
