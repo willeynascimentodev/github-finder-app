@@ -49,7 +49,7 @@ function User() {
             <div className="w-full mx-auto lg:w-10/12">
                 <div className="mb-4">
                     <Link to="/" className="btn btn-ghost">
-                        Back To Search {params.name}
+                        Back To Search
                     </Link>
                 </div>
                 <div className="grid grid-cols-1 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-3 mb-8 md:gap-8">
@@ -82,7 +82,7 @@ function User() {
                             <p>{ bio }</p>
                             <div className="mt-4 card-actions">
                                 <a className='btn btn-outline' href={ html_url } target='_blank' rel='noreferrer'>
-                                    Visit Github Profile
+                                    Visit Github Profile { html_url }
                                 </a>
                             </div>
                         </div>

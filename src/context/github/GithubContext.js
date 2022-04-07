@@ -18,21 +18,6 @@ export const GithubProvider = ({ children }) => {
   
 
     const [state, dispatch] = useReducer(githubReducer, initialState)
-    
-
-    //Get search results
-
-
-
-
-    // const clearUsers = () => dispatch({
-    //     type: 'CLEAR_USERS',
-    //     payload: []
-    // })
-
-    // const setLoading = () => dispatch({
-    //     type: 'SET_LOADING'
-    // })
 
     return <GithubContext.Provider value={{
         ...state,
