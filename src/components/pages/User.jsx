@@ -3,7 +3,7 @@ import { useEffect, useContext, useState } from "react"
 import { useParams, Link } from "react-router-dom"
 import GithubContext from "../../context/github/GithubContext"
 import RepoList from '../layout/repos/RepoList'
-import 
+import { getUserAndRepos } from '../../context/github/GithubAction'
 
 function User() {
     const { user, repos, loading, dispatch } = useContext(GithubContext)
@@ -30,15 +30,15 @@ function User() {
     useEffect( () => {
         dispatch({type: 'SET_LOADING'})
         const getUserData = async () => {
-            const userData = await showUser(params.login)
-            dispatch({type:'GET_USER', payload: userData})
-
-            const userRepoData = await getUserRepos(params.login)
-            dispatch({type:'GET_REPOS', payload: userRepoData})
+            const userData = await getUserAndRepos(params.login)
+            dispatch({type:'GET_USERS_AND_REPOS', payload: userData})
+            
         }
+        
 
         getUserData()
-    }, [dispatach, params.login])
+
+    }, [dispatch, params.login])
 
     if(loading) {
         return <p>Loading...</p>
